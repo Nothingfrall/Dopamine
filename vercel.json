@@ -6,7 +6,7 @@
       "use": "@vercel/static"
     },
     {
-      "src": "games/*.html", 
+      "src": "games/*.html",
       "use": "@vercel/static"
     },
     {
@@ -16,12 +16,17 @@
   ],
   "routes": [
     {
+      "src": "/games/.*",
+      "dest": "/games/[name].html"
+    },
+    {
       "src": "/",
       "dest": "/dopamine.html"
     },
     {
-      "src": "/(.*)",
-      "dest": "/dopamine.html"
+      "src": "/(.*)", 
+      "dest": "/dopamine.html",
+      "status": 200
     }
   ]
 }
