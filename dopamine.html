@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dopamine</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --bg-color: #FFFFFF;
+            --accent-color: #9EBBFF;
+            --text-color: #11B592;
+            --secondary-color: #CCCCCC;
+            --input-bg-color: #F0F0F0;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-[var(--bg-color)] text-[var(--text-color)]">
+    <header class="flex items-center justify-between p-4 bg-[var(--bg-color)] shadow-lg">
+        <h1 class="text-[var(--text-color)] text-2xl font-bold">Dopamine</h1>
+        <a href="#" class="text-[var(--text-color)]">
+            <i class="fas fa-shopping-cart text-xl"></i>
+        </a>
+    </header>
+    <main class="p-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="game-card bg-[var(--input-bg-color)] rounded-md overflow-hidden shadow-lg">
+                <a href="games/modernstrike.html">
+                    <img alt="Modern Strike" class="w-full h-40 object-cover" src="images/modernstrike.png">
+                </a>
+                <p class="p-2 text-center text-[var(--text-color)]">Modern Strike</p>
+            </div>
+            <div class="game-card bg-[var(--input-bg-color)] rounded-md overflow-hidden shadow-lg">
+                <a href="games/Dopaminedump.html">
+                    <img alt="Dopamine Dumper" class="w-full h-40 object-cover" src="images/dopadump.jpg">
+                </a>
+                <p class="p-2 text-center text-[var(--text-color)]">Dopamine Dumper</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
