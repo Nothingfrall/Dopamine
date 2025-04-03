@@ -1,0 +1,11 @@
+{
+  "name": "dopamine",
+  "version": "1.0.0",
+  "description": "Static site for Dopamine Dump",
+  "scripts": {
+    "start": "serve"
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
+  }
+}

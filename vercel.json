@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "games/*.html", 
+      "use": "@vercel/static"
+    },
+    {
+      "src": "images/*",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/dopamine.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/dopamine.html"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Dopamine
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg-color: #FFFFFF; /* Updated to match download.html */
+      --accent-color: #9EBBFF;
+      --text-color: #11B592; /* Updated to match download.html */
+      --secondary-color: #CCCCCC;
+      --input-bg-color: #F0F0F0; /* Updated to match download.html */
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+ </head>
+ <body class="bg-[var(--bg-color)] text-[var(--text-color)]">
+  <header class="flex items-center justify-between p-4 bg-[var(--bg-color)] shadow-lg">
+   <h1 class="text-[var(--text-color)] text-2xl font-bold">
+    Dopamine
+   </h1>
+   <a href="#" class="text-[var(--text-color)]">
+    <i class="fas fa-shopping-cart text-xl">
+    </i>
+   </a>
+  </header>
+  <main class="p-4">
+   <div class="relative mb-4">
+    <input id="searchInput" class="w-full p-2 pl-10 bg-[var(--input-bg-color)] text-[var(--text-color)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--secondary-color)]" placeholder="Search" type="text"/>
+    <i class="fas fa-search absolute left-3 top-3 text-[var(--secondary-color)]">
+    </i>
+   </div>
+   <script>
+    document.getElementById('searchInput').addEventListener('input', function() {
+      const searchTerm = this.value.toLowerCase();
+      const gameCards = document.querySelectorAll('.game-card');
+      
+      gameCards.forEach(card => {
+        const gameName = card.querySelector('p').textContent.toLowerCase();
+        if (gameName.includes(searchTerm)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+   </script>
+   <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div class="game-card bg-[var(--input-bg-color)] rounded-md overflow-hidden shadow-lg">
+     <a href="games/modernstrike.html">
+       <img alt="Super Sus game cover" class="w-full h-40 object-cover" height="400" src="images/modernstrike.png" width="600"/>
+     </a>
+     <p class="p-2 text-center text-[var(--text-color)]">
+      Modern Strike
+     </p>
+    </div>
+    <div class="game-card bg-[var(--input-bg-color)] rounded-md overflow-hidden shadow-lg">
+     <a href="games/Dopaminedump.html">
+       <img alt="Combat Master Mobile FPS game cover" class="w-full h-40 object-cover" height="400" src="images/dopadump.jpg" width="600"/>
+     </a>
+     <p class="p-2 text-center text-[var(--text-color)]">
+      Dopamine Dumper
+     </p>
+    </div>
+   </div>
+  </main>
+ </body>
+</html>
