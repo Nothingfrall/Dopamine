@@ -3,57 +3,248 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dopamine</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Dopamine - Mobile Game Mods</title>
     <style>
         :root {
-            --bg-color: #FFFFFF;
-            --accent-color: #9EBBFF;
-            --text-color: #11B592;
-            --secondary-color: #CCCCCC;
-            --input-bg-color: #F0F0F0;
+            --primary: #2563eb;
+            --primary-light: #3b82f6;
+            --primary-dark: #1e40af;
+            --bg: #ffffff;
+            --text: #1e3a8a;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+            --hover-bg: #eff6ff;
         }
-        .hidden {
-            display: none;
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        #navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .menu {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .menu li a {
+            color: var(--primary-light);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .menu li a:hover {
+            color: var(--primary-dark);
+            background-color: var(--hover-bg);
+        }
+
+        main {
+            margin-top: 5rem;
+            padding: 2rem 0;
+        }
+
+        .search-bar {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .search-bar input {
+            width: 100%;
+            max-width: 500px;
+            padding: 0.8rem 1.5rem;
+            border: 1px solid var(--border);
+            border-radius: 2rem;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        .search-bar input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 0 1rem;
+        }
+
+        .image-item {
+            background: white;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+        }
+
+        .image-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .image-title {
+            padding: 1rem;
+            text-align: center;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        footer {
+            background-color: var(--bg);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .social-media a {
+            color: var(--primary-light);
+            font-size: 1.25rem;
+            transition: color 0.2s ease;
+        }
+
+        .social-media a:hover {
+            color: var(--primary-dark);
+        }
+
+        @media (max-width: 768px) {
+            .image-gallery {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu {
+                gap: 0.75rem;
+            }
+            
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="bg-[var(--bg-color)] text-[var(--text-color)]">
-    <header class="flex items-center justify-between p-4 bg-[var(--bg-color)] shadow-lg">
-        <h1 class="text-[var(--text-color)] text-2xl font-bold">Dopamine</h1>
-        <a href="#" class="text-[var(--text-color)]">
-            <i class="fas fa-shopping-cart text-xl"></i>
-        </a>
-    </header>
-    <main class="p-4">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div class="game-card bg-[var(--input-bg-color)] rounded-md overflow-hidden shadow-lg">
-                <a href="/games/modernstrike.html" onclick="event.preventDefault(); console.log('Navigating to:', this.href); window.location.href = this.href;">
-                    <img alt="Modern Strike" class="w-full h-40 object-cover" 
-                         src="https://ar-hosting.pages.dev/1743722563200.jpg"
-                         onerror="this.onerror=null;this.src='/images/logo.jpg';console.error('Gambar tidak ditemukan:', this.src)">
-                </a>
-                <p class="p-2 text-center text-[var(--text-color)]">Modern Strike</p>
+<body>
+    <nav id="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="/">Dopamine</a>
             </div>
-            <div class="game-card bg-[var(--input-bg-color)] rounded-md overflow-hidden shadow-lg">
-                <a href="/games/dopaminedump.html" onclick="event.preventDefault(); console.log('Navigating to:', this.href); 
-                    fetch(this.href)
-                        .then(response => {
-                            if (!response.ok) throw new Error('File not found');
-                            window.location.href = this.href;
-                        })
-                        .catch(error => {
-                            console.error('Navigation error:', error);
-                            alert('Game tidak ditemukan. Silakan coba lagi atau hubungi admin.');
-                        });">
-                    <img alt="Dopamine Dumper" class="w-full h-40 object-cover" 
-                         src="https://ar-hosting.pages.dev/1743722189639.jpg"
-                         onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=Fallback+Image';console.error('Gambar tidak ditemukan:', this.src)">
+            <ul class="menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/internal">Internal</a></li>
+                <li><a href="/zygisk">Zygisk</a></li>
+                <li><a href="/premium">Premium</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="search-bar">
+            <input type="text" placeholder="Search games...">
+        </div>
+
+        <div class="image-gallery">
+            <div class="image-item">
+                <a href="/games/modernstrike.html">
+                    <img src="https://ar-hosting.pages.dev/1743722563200.jpg" alt="Modern Strike">
+                    <div class="image-title">Modern Strike</div>
                 </a>
-                <p class="p-2 text-center text-[var(--text-color)]">Dopamine Dumper</p>
+            </div>
+            <div class="image-item">
+                <a href="/games/dopaminedump.html">
+                    <img src="https://ar-hosting.pages.dev/1743722189639.jpg" alt="Dopamine Dumper">
+                    <div class="image-title">Dopamine Dumper</div>
+                </a>
             </div>
         </div>
     </main>
+
+    <footer>
+        <p>&copy; 2024 Dopamine. All rights reserved.</p>
+        <div class="social-media">
+            <a href="https://t.me/modjall" target="_blank"><i class="fab fa-telegram"></i></a>
+            <a href="https://www.youtube.com/@bang_ijall" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const searchInput = document.querySelector('.search-bar input');
+            const gameItems = document.querySelectorAll('.image-item');
+            
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                
+                gameItems.forEach(item => {
+                    const title = item.querySelector('.image-title').textContent.toLowerCase();
+                    if (title.includes(searchTerm)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
