@@ -45,7 +45,8 @@
                             console.error('Navigation error:', error);
                             alert('Game tidak ditemukan. Silakan coba lagi atau hubungi admin.');
                         });">
-                    <img alt="Dopamine Dumper" class="w-full h-40 object-cover" src="/images/dopadump.jpg">
+                    <img alt="Dopamine Dumper" class="w-full h-40 object-cover" src="/images/dopadump.jpg" 
+                         onerror="this.onerror=null;this.src='/images/logo.jpg';console.error('Gambar tidak ditemukan:', this.src)">
                 </a>
                 <p class="p-2 text-center text-[var(--text-color)]">Dopamine Dumper</p>
             </div>
