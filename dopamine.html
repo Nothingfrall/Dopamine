@@ -35,7 +35,16 @@
                 <p class="p-2 text-center text-[var(--text-color)]">Modern Strike</p>
             </div>
             <div class="game-card bg-[var(--input-bg-color)] rounded-md overflow-hidden shadow-lg">
-                <a href="/games/dopaminedump.html" onclick="event.preventDefault(); console.log('Navigating to:', this.href); window.location.href = this.href;">
+                <a href="/games/dopaminedump.html" onclick="event.preventDefault(); console.log('Navigating to:', this.href); 
+                    fetch(this.href)
+                        .then(response => {
+                            if (!response.ok) throw new Error('File not found');
+                            window.location.href = this.href;
+                        })
+                        .catch(error => {
+                            console.error('Navigation error:', error);
+                            alert('Game tidak ditemukan. Silakan coba lagi atau hubungi admin.');
+                        });">
                     <img alt="Dopamine Dumper" class="w-full h-40 object-cover" src="/images/dopadump.jpg">
                 </a>
                 <p class="p-2 text-center text-[var(--text-color)]">Dopamine Dumper</p>
