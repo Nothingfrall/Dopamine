@@ -30,7 +30,9 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div class="game-card bg-[var(--input-bg-color)] rounded-md overflow-hidden shadow-lg">
                 <a href="/games/modernstrike.html" onclick="event.preventDefault(); console.log('Navigating to:', this.href); window.location.href = this.href;">
-                    <img alt="Modern Strike" class="w-full h-40 object-cover" src="/images/modernstrike.png">
+                    <img alt="Modern Strike" class="w-full h-40 object-cover" 
+                         src="https://ar-hosting.pages.dev/1743722189639.jpg"
+                         onerror="this.onerror=null;this.src='/images/logo.jpg';console.error('Gambar tidak ditemukan:', this.src)">
                 </a>
                 <p class="p-2 text-center text-[var(--text-color)]">Modern Strike</p>
             </div>
@@ -45,8 +47,9 @@
                             console.error('Navigation error:', error);
                             alert('Game tidak ditemukan. Silakan coba lagi atau hubungi admin.');
                         });">
-                    <img alt="Dopamine Dumper" class="w-full h-40 object-cover" src="https://ar-hosting.pages.dev/1743722189639.jpg" 
-                         onerror="this.onerror=null;this.src='/images/logo.jpg';console.error('Gambar tidak ditemukan:', this.src)">
+                    <img alt="Dopamine Dumper" class="w-full h-40 object-cover" 
+                         src="https://ar-hosting.pages.dev/1743722189639.jpg"
+                         onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=Fallback+Image';console.error('Gambar tidak ditemukan:', this.src)">
                 </a>
                 <p class="p-2 text-center text-[var(--text-color)]">Dopamine Dumper</p>
             </div>
