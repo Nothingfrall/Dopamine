@@ -21,7 +21,7 @@
                     <i class="fas fa-bars"></i>
                 </div>
             </div>
-            <ul class="menu hidden md:flex space-x-6 mt-4 md:mt-0">
+            <ul class="menu hidden md:flex space-x-6 mt-4 md:mt-0 md:items-center">
                 <li class="home">
                     <a class="text-[#1ed8b0] hover:text-gray-700" href="/">Home</a>
                 </li>
@@ -105,9 +105,13 @@
                 menu.classList.toggle("hidden");
                 menu.classList.toggle("flex");
                 menu.classList.toggle("flex-col");
+                menu.classList.toggle("items-center");
                 menu.classList.toggle("bg-white");
-                menu.classList.toggle("py-2");
-                menu.classList.toggle("space-y-2");
+                menu.classList.toggle("py-4");
+                menu.classList.toggle("px-4");
+                menu.classList.toggle("space-y-4");
+                menu.classList.toggle("rounded-lg");
+                menu.classList.toggle("shadow-md");
             });
 
             // Search functionality
