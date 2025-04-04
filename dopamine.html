@@ -11,27 +11,19 @@
     <title>Dopamine - Mobile Game Mods</title>
 </head>
 <body class="bg-white text-[#1ed8b0] font-mono">
-    <nav class="fixed top-0 w-full bg-white shadow-md z-50" id="navbar">
-        <div class="container mx-auto flex justify-between items-center p-4">
-            <div class="text-2xl font-bold text-[#1ed8b0]">
+    <nav id="navbar">
+        <div class="container">
+            <div class="logo">
                 <a href="/">Dopamine</a>
             </div>
-            <div class="burger-menu text-[#1ed8b0] md:hidden">
+            <div class="burger-menu">
                 <i class="fas fa-bars"></i>
             </div>
-            <ul class="menu hidden md:flex space-x-6">
-                <li class="home">
-                    <a class="text-[#1ed8b0] hover:text-gray-700" href="/">Home</a>
-                </li>
-                <li class="internal">
-                    <a class="text-[#1ed8b0] hover:text-gray-700" href="/internal">Internal</a>
-                </li>
-                <li class="zygisk">
-                    <a class="text-[#1ed8b0] hover:text-gray-700" href="/zygisk">Zygisk</a>
-                </li>
-                <li class="premium">
-                    <a class="text-[#1ed8b0] hover:text-gray-700" href="/premium">Premium</a>
-                </li>
+            <ul class="menu">
+                <li class="home"><a href="/" data-type="home">Home</a></li>
+                <li class="internal"><a href="/internal">Internal</a></li>
+                <li class="zygisk"><a href="/zygisk">Zygisk</a></li>
+                <li class="premium"><a href="/premium">Premium</a></li>
             </ul>
         </div>
     </nav>
@@ -100,7 +92,7 @@
             });
 
             burgerMenu.addEventListener("click", () => {
-                menu.classList.toggle("hidden");
+                menu.classList.toggle("active");
             });
 
             // Search functionality
@@ -121,5 +113,3 @@
     </script>
 </body>
 </html>
-
-
