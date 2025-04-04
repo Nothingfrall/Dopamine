@@ -5,13 +5,100 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <meta content="#242933" name="theme-color"/>
     <link href="/src/favicon.svg" rel="icon" type="image/svg+xml"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        #navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo a {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1ed8b0;
+            text-decoration: none;
+        }
+        
+        .menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        
+        .menu li {
+            margin-left: 20px;
+        }
+        
+        .menu li a {
+            text-decoration: none;
+            color: #1ed8b0;
+            transition: color 0.3s, border-bottom-color 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+        
+        .menu li a:hover,
+        .menu li a:focus {
+            color: #f6f0e9;
+            border-bottom-color: #f6f0e9;
+        }
+        
+        .menu li.active a {
+            color: #1ed8b0;
+            border-bottom-color: #1ed8b0;
+        }
+        
+        .burger-menu {
+            display: none;
+            cursor: pointer;
+            color: #1ed8b0;
+        }
+        
+        @media only screen and (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                padding: 10px;
+                align-items: center;
+            }
+            
+            .menu.active {
+                display: flex;
+            }
+            
+            .menu li {
+                margin: 10px 0;
+            }
+            
+            .burger-menu {
+                display: block;
+            }
+        }
+    </style>
     <meta content="Welcome to Dopamine, a place where you can find modified mobile games" name="description"/>
-    <title>Dopamine - Mobile Game Mods</title>
+    <title>Dopamine.Cheats</title>
 </head>
 <body class="bg-white text-[#1ed8b0] font-mono">
-    <nav id="navbar">
+<nav id="navbar">
         <div class="container">
             <div class="logo">
                 <a href="/">Dopamine</a>
